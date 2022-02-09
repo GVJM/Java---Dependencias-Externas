@@ -1,5 +1,10 @@
 package br.com.letscode.dependencias.trabalhofinal.tiposdedados;
 
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.BufferedWriter;
+import java.io.File;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -36,6 +41,33 @@ import lombok.NonNull;
         for(String nome : sortedNameList){
             System.out.println(nome);
         }
+    }
+
+    public void allStudentsToTxt(String fileName){
+        
+        try{
+            FileWriter fw = new FileWriter(fileName, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            
+            bw.newLine();
+            bw.write("Todos os Alunos:");
+            bw.newLine();
+            bw.newLine();
+            
+            List<String> sortedNameList = new ArrayList<String>(this.listaDeAlunos.keySet()) ;    
+            Collections.sort(sortedNameList);
+
+            for(String nome : sortedNameList){
+                bw.write(nome);
+                bw.newLine();
+            }
+            bw.close();
+        }
+        catch(IOException e){
+            System.out.println("Erro de IO");
+        }
+            
+
     }
 
     public ListagemDeAlunos(){

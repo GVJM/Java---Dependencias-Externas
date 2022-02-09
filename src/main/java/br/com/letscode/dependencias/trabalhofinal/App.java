@@ -1,12 +1,7 @@
 package br.com.letscode.dependencias.trabalhofinal;
 
 import br.com.letscode.dependencias.trabalhofinal.tiposdedados.*;
-import java.util.ArrayList;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )
@@ -54,6 +49,10 @@ public class App
             lista.addAluno(aluno);
         }
 
-        lista.printLista();
+
+        lista.allStudentsToTxt("output.txt");
+
+
     }
+
 }
