@@ -1,8 +1,10 @@
 package br.com.letscode.dependencias.trabalhofinal.tiposdedados;
 
-import br.com.letscode.dependencias.trabalhofinal.tiposdedados.Aluno;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 import lombok.AccessLevel;
 import lombok.Setter;
@@ -11,13 +13,13 @@ import lombok.Data;
 import lombok.ToString;
 import lombok.NonNull;
 
-public class ListagemDeAlunos {
+@Data public class ListagemDeAlunos {
     @Getter private HashMap<String,Aluno> listaDeAlunos = new HashMap<String,Aluno>();
 
     public void addAluno(@NonNull Aluno aluno){
         if(this.listaDeAlunos.containsKey(aluno.getNome())){
             
-            for (String turma : this.listaDeAlunos.get(aluno.getTurmas()).getTurmas()) {
+            for (String turma : this.listaDeAlunos.get(aluno.getNome()).getTurmas()) {
                 aluno.addTurma(turma);    
             }
             
@@ -28,8 +30,13 @@ public class ListagemDeAlunos {
         }       
     }
 
-    
-
+    public void printLista(){
+        List<String> sortedNameList = new ArrayList<String>(this.listaDeAlunos.keySet()) ;    
+        Collections.sort(sortedNameList);
+        for(String nome : sortedNameList){
+            System.out.println(nome);
+        }
+    }
 
     public ListagemDeAlunos(){
     }

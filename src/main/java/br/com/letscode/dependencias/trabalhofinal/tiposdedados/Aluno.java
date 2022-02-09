@@ -4,14 +4,15 @@ import java.util.ArrayList;
 
 
 import lombok.NonNull;
+import lombok.Data;
 import lombok.Getter;
 import lombok.ToString;
 
-@ToString public class Aluno {
+@Data public class Aluno {
     @Getter private final String nome;
     @Getter private ArrayList<String> turmas = new ArrayList<String>();
     
-    Aluno(@NonNull String nome){
+    public Aluno(@NonNull String nome){
         this.nome = nome;
     }
 
