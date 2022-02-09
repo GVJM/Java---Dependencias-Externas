@@ -1,25 +1,33 @@
 package br.com.letscode.dependencias.trabalhofinal.tiposdedados;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 
 import lombok.NonNull;
-import lombok.AccessLevel;
-import lombok.Setter;
-import lombok.Data;
+import lombok.Getter;
 import lombok.ToString;
 
-@Data public class Aluno {
-    private final String nome;
-    private HashMap<String,Boolean> turmas=new HashMap<String,Boolean>();
+@ToString public class Aluno {
+    @Getter private final String nome;
+    @Getter private ArrayList<String> turmas = new ArrayList<String>();
     
-    public Aluno(@NonNull String nome){
+    Aluno(@NonNull String nome){
         this.nome = nome;
     }
 
     public void addTurma(@NonNull String nomeDaTurma){
-        if (nomeDaTurma.equals("Java")||nomeDaTurma.equals("Banco de dados")){
-            turmas.put(nomeDaTurma,true);
+        if ( (nomeDaTurma.equals("Java") && !this.hasTurma("Java")) || nomeDaTurma.equals("Banco de dados") && !this.hasTurma("Banco de dados")){
+            this.turmas.add(nomeDaTurma);
         }
     }
+
+    public boolean hasTurma(@NonNull String nomeDaTurma){
+        if( this.turmas.contains(nomeDaTurma) ){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
 }
