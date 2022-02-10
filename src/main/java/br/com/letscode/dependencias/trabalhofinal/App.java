@@ -1,6 +1,6 @@
 package br.com.letscode.dependencias.trabalhofinal;
 
-import br.com.letscode.dependencias.trabalhofinal.tiposdedados.*;
+import br.com.letscode.dependencias.trabalhofinal.datatypes.*;
 
 public class App 
 {
@@ -34,7 +34,7 @@ public class App
             "Dra. Alana Porto"
         };
 
-        StudentsList lista = new StudentsList();
+        StudentsDB lista = new StudentsDB();
 
         for( String name : turmaJava){
             Student student = new Student(name);

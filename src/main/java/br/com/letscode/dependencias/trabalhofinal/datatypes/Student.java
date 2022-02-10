@@ -1,4 +1,4 @@
-package br.com.letscode.dependencias.trabalhofinal.tiposdedados;
+package br.com.letscode.dependencias.trabalhofinal.datatypes;
 
 import java.util.ArrayList;
 

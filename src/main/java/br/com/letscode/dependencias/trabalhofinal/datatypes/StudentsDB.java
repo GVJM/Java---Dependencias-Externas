@@ -1,4 +1,4 @@
-package br.com.letscode.dependencias.trabalhofinal.tiposdedados;
+package br.com.letscode.dependencias.trabalhofinal.datatypes;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -16,22 +16,22 @@ import lombok.NonNull;
 
 // Classe que guarda instâncias da classe Student em um HashMap com chaves String que serâo o nome de cada aluno.
 // Além disso reune métodos para adição, filtragem e escrita de dados.
-@Data public class StudentsList {
-    private HashMap<String,Student> studentList = new HashMap<String,Student>();
+@Data public class StudentsDB {
+    private HashMap<String,Student> studentDB = new HashMap<String,Student>();
 
     //Função que adiciona novos alunos ao HashMap, com checagem de existência prévia.
     //Caso haja um estudante no banco com mesmo nome, ela adiciona a turma do novo registro ao já registrado.
     public void addstudent(@NonNull Student student){
-        if(this.studentList.containsKey(student.getName())){
+        if(this.studentDB.containsKey(student.getName())){
             
-            for (String className : this.studentList.get(student.getName()).getClasses()) {
+            for (String className : this.studentDB.get(student.getName()).getClasses()) {
                 student.addClass(className);    
             }
             
-            this.studentList.put(student.getName(), student);
+            this.studentDB.put(student.getName(), student);
         } 
         else{
-            this.studentList.put(student.getName(), student);
+            this.studentDB.put(student.getName(), student);
         }       
     }
 
@@ -46,10 +46,10 @@ import lombok.NonNull;
             bw.newLine();
             bw.newLine();
             
-            List<String> sortedNameList = new ArrayList<String>( this.studentList.keySet()) ;    
-            Collections.sort(sortedNameList);
+            List<String> sortedNameDB = new ArrayList<String>( this.studentDB.keySet()) ;    
+            Collections.sort(sortedNameDB);
 
-            for(String nome : sortedNameList){
+            for(String nome : sortedNameDB){
                 bw.write(nome);
                 bw.newLine();
             }
@@ -90,12 +90,12 @@ import lombok.NonNull;
         }
     }
 
-    //Método que retorna uma lista com todos os Alunos de determinada turma
+    //Método que retorna uma DBa com todos os Alunos de determinada turma
     public List<Student> getClassStudents(@NonNull String className){
 
         List<Student> classStudents = new ArrayList<Student>() ;    
 
-        for(Student student : this.studentList.values()){
+        for(Student student : this.studentDB.values()){
             if(student.hasClass(className)){
                 classStudents.add(student);
             }
@@ -105,6 +105,6 @@ import lombok.NonNull;
 
     }
 
-    public StudentsList(){
+    public StudentsDB(){
     }
 }
