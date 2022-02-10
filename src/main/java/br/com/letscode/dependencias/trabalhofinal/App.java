@@ -35,20 +35,23 @@ public class App
             "Dra. Alana Porto"
         };
 
-        ListagemDeAlunos lista = new ListagemDeAlunos();
+        StudentsList lista = new StudentsList();
 
-        for( String nome : turmaJava){
-            Aluno aluno = new Aluno(nome);
-            aluno.addTurma("Java");
-            lista.addAluno(aluno);
+        for( String name : turmaJava){
+            Student student = new Student(name);
+            student.addClass("Java");
+            lista.addstudent(student);
         }
 
-        for( String nome : turmaBD){
-            Aluno aluno = new Aluno(nome);
-            aluno.addTurma("Banco de dados");
-            lista.addAluno(aluno);
+        for( String name : turmaBD){
+            Student student = new Student(name);
+            student.addClass("Banco de dados");
+            lista.addstudent(student);
         }
 
+        lista.classStudentsToTxt("Java", "output.txt");
+
+        lista.classStudentsToTxt("Banco de dados", "output.txt");
 
         lista.allStudentsToTxt("output.txt");
 

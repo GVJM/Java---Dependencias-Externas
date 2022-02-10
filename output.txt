@@ -1,5 +1,35 @@
+Turma Java:
+Nº de Alunos: 11
 
-Todos os Alunos:
+Natália Gomes
+Thomas Peixoto
+Pietra Martins
+Thales Farias
+Lavínia Cunha
+Vitor Hugo Lima
+Letícia Cunha
+Srta. Ana Júlia Ramos
+Alexandre Martins
+Esther Rodrigues
+Yago Ramos
+
+Turma Banco de dados:
+Nº de Alunos: 12
+
+Natália Gomes
+Luiz Miguel Azevedo
+Thales Farias
+Nathan Nascimento
+Lavínia Cunha
+Vitor Hugo Lima
+Letícia Cunha
+Srta. Ana Júlia Ramos
+Dra. Lavínia Lopes
+Esther Rodrigues
+Yago Ramos
+Dra. Alana Porto
+
+Todos os estudantes:
 
 Alexandre Martins
 Dra. Alana Porto
@@ -16,3 +46,4 @@ Thales Farias
 Thomas Peixoto
 Vitor Hugo Lima
 Yago Ramos
+
